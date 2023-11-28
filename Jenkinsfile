@@ -1,10 +1,5 @@
 pipeline {
-    agent{
-        docker {
-            image 'node:alpine'
-            args '-e NPM_CONFIG_LOGLEVEL=info -p 8000:8000'
-        }
-    }
+    agent: any
     stages{
         stage('clean project'){
             steps{
