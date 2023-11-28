@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def mavenVersion = '3.9.4'  // Mettez à jour la version de Maven selon vos besoins
-                    def mavenHome = tool name: "Maven-${mavenVersion}", type: 'maven'
+                    def mavenHome = tool name: "Maven3", type: 'maven'
                     env.PATH = "${mavenHome}/bin:${env.PATH}"
                     echo "Maven installed at ${mavenHome}"
                 }
