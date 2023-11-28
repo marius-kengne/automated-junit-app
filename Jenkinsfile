@@ -1,5 +1,5 @@
 pipeline {
-    agent: 'jdk11'
+
     stages{
         stage('clean project'){
             steps{
