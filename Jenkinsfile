@@ -71,8 +71,8 @@ pipeline {
         stage('Update Xray in Jira') {
             steps {
                 script {
-                    def inputFile = 'input.xml'
-                    def outputFile = 'output.json'
+                    def inputFile = '${WORKSPACE}/target/surefire-reports/TEST-Calculator.xml'
+                    def outputFile = '${WORKSPACE}/target/surefire-reports/output.json'
 
                     // Utilisation de xmlstarlet pour convertir XML en JSON
                     sh "xmlstarlet fo --json ${inputFile} > ${outputFile}"
