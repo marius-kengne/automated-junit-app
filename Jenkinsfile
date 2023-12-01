@@ -9,7 +9,7 @@ pipeline {
 
     parameters {
        string(name:'JIRA_BASE_URL', defaultValue: 'https://mariuskengne.atlassian.net')
-       string(name:'JIRA_PROJECT_KEY, defaultValue: 'CL')
+       string(name:'JIRA_PROJECT_KEY', defaultValue: 'CL')
        string(name:'PROJECT_ISSUES_KEY', defaultValue: 'CL-8')
     }
 
