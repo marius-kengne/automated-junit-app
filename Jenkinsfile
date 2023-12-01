@@ -78,15 +78,15 @@ pipeline {
 
                     // Utilisation de xmlstarlet pour convertir XML en JSON
                     sh "touch outputFile"
-                    sh "xmlstarlet fo ${inputFile} > ${outputFile}"
+                    #sh "xmlstarlet fo ${inputFile} > ${outputFile}"
 
                     echo "Output File: ${outputFile}"
 
                     // Affichage du contenu du fichier JSON
-                    sh "cat ${outputFile}"
+                    #sh "cat ${outputFile}"
 
                     // Appel de la fonction pour mettre à jour Xray avec le fichier JSON
-                    updateXrayWithJson("${outputFile}")
+                    updateXrayWithJson("${inputFile}")
                 }
             }
         }
