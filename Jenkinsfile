@@ -78,7 +78,7 @@ pipeline {
 
                     // Utilisation de xmlstarlet pour convertir XML en JSON
                     sh "touch outputFile"
-                    sh "xmlstarlet fo --json ${inputFile} > ${outputFile}" || error('Failed to convert XML to JSON')
+                    sh "xmlstarlet fo --json ${inputFile} > ${outputFile}"
 
                     echo "Output File: ${outputFile}"
 
