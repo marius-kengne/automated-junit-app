@@ -74,8 +74,12 @@ pipeline {
                     def inputFile = "${WORKSPACE}/target/surefire-reports/TEST-Calculator.xml"
                     def outputFile = "${WORKSPACE}/target/surefire-reports/output.json"
 
+                    echo "Input File: ${inputFile}"
+
                     // Utilisation de xmlstarlet pour convertir XML en JSON
-                    sh "xmlstarlet fo --json ${inputFile} > ${outputFile}"
+                    sh "xmlstarlet fo --json ${inputFile} > ${outputFile}" || error('Failed to convert XML to JSON')
+
+                    echo "Output File: ${outputFile}"
 
                     // Affichage du contenu du fichier JSON
                     sh "cat ${outputFile}"
