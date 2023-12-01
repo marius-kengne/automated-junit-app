@@ -51,7 +51,7 @@ pipeline {
                     def xmlStarletInstalled = sh(script: 'command -v xmlstarlet', returnStatus: true)
                     if (xmlStarletInstalled != 0) {
                         echo "xmlstarlet n'est pas installé. Installation en cours..."
-                        sh "apt-get update && sudo apt-get install -y xmlstarlet"
+                        sh "sudo apt-get update && sudo apt-get install -y xmlstarlet"
                     } else {
                         echo "xmlstarlet est déjà installé."
                     }
@@ -60,7 +60,7 @@ pipeline {
                     def curlInstalled = sh(script: 'command -v curl', returnStatus: true)
                     if (curlInstalled != 0) {
                         echo "curl n'est pas installé. Installation en cours..."
-                        sh "apt-get update && sudo apt-get install -y curl"
+                        sh "sudo apt-get update && sudo apt-get install -y curl"
                     } else {
                         echo "curl est déjà installé."
                     }
