@@ -72,13 +72,13 @@ pipeline {
             steps {
                 script {
                     def inputFile = "${WORKSPACE}/target/surefire-reports/TEST-Calculator.xml"
-                    def outputFile = "${WORKSPACE}/target/surefire-reports/output.json"
+                    def outputFile = "${WORKSPACE}/target/surefire-reports/TEST-Calculator.json"
 
                     echo "Input File: ${inputFile}"
 
                     // Utilisation de xmlstarlet pour convertir XML en JSON
                     sh "touch outputFile"
-                    sh "xmlstarlet fo --json ${inputFile} > ${outputFile}"
+                    sh "xmlstarlet fo ${inputFile} > ${outputFile}"
 
                     echo "Output File: ${outputFile}"
 
